@@ -1,0 +1,30 @@
+.piece {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    cursor: grab;
+
+    &.dragging {
+        cursor: grabbing;
+        z-index: 10;
+    }
+}
+
+.remove {
+    content: 'X';
+    background: #f3f3f3;
+    padding: 8px;
+    border-radius: 5px;
+    color: #f06;
+    cursor: pointer;
+    height: 30px;
+    margin-right: -30px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.31);
+    &:hover {
+        background: #f06;
+        color: rgb(221, 221, 221);
+        transform: scale(1.3);
+    }
+}

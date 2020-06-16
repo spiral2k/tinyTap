@@ -1,0 +1,33 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "entry",
+                "corejs": "3.6.5"
+            }
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-object-rest-spread",
+        "@babel/plugin-transform-runtime",
+        "@babel/plugin-syntax-dynamic-import",
+        [
+            "module-resolver",
+            {
+                "root": ["./"],
+                "alias": {
+                    "@src": "./src/",
+                    "@assets": "./src/assets",
+                    "@utils": "./src/utils",
+                    "@hooks": "./src/hooks",
+                    "@components": "./src/components",
+                    "@pages": "./src/pages",
+                    "@style": "./src/style",
+                    "@routes": "./src/routes"
+                }
+            }
+        ]
+    ]
+}
