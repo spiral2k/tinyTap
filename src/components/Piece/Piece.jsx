@@ -6,7 +6,6 @@ import './Piece.scss'
 function Piece({ id, src, x, y, width, height, onPieceChange, onPieceRemove, canvasRef }) {
     const [tempPiecePos, setTempPiecePos] = useState({ x, y })
     const dragging = useRef(false)
-    const imgRef = useRef(null)
 
     const setPiecePosition = e => {
         if (!dragging.current) return
@@ -55,7 +54,6 @@ function Piece({ id, src, x, y, width, height, onPieceChange, onPieceRemove, can
 
     return (
         <div
-            ref={imgRef}
             className={`piece ${dragging.current ? 'dragging' : ''}`}
             style={{
                 width,

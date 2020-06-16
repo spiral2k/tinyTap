@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, memo } from 'react'
 import PropTypes from 'prop-types'
 
 import Canvas from '@components/Canvas/Canvas'
@@ -16,12 +16,10 @@ function Puzzle({ imageSrc }) {
     useEffect(() => {
         imageRef.current.onload = e => {
             const { width, height } = e.target
-
             setDimensions({ width, height })
-            // ctx.drawImage(imageRef.current, 0, 0)
         }
         imageRef.current.src = imageSrc
-    }, [imageSrc])
+    }, [])
 
     const onPiece = piece => {
         setPieces([piece, ...pieces])
@@ -65,4 +63,4 @@ Puzzle.propTypes = {
     imageSrc: PropTypes.string.isRequired,
 }
 
-export default Puzzle
+export default memo(Puzzle)
